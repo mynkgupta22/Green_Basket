@@ -1,4 +1,5 @@
 #Green Basket
+![Green Cart Icon Grocery Logo](https://user-images.githubusercontent.com/107461052/212683987-3cf29572-7af3-4b84-bc8d-57c594f8a75e.png)
 
 An online vegetable sales application allows customers to easily purchase fresh, locally sourced produce from their phone or computer. With a user-friendly interface, customers can browse and select from a wide variety of fruits and vegetables, customize their order, and choose a delivery or pickup option that works for them.
 
@@ -12,6 +13,10 @@ This repository is open-source and contributions are welcome.
 The application is built using modern technologies such as Spring Boot.
 It also includes a swagger documentation for the endpoints.
 It follows the best practices for security in terms of input validation and access control.
+
+#E-R Diagram
 ![E-R Diagram](https://user-images.githubusercontent.com/107461052/212683690-1910c6e2-cb10-409e-b1ee-d94c6c18f246.png)
 
+#WorkFlow
 ![WorkFlow](https://user-images.githubusercontent.com/107461052/212683750-11c64541-9c01-4137-9e1f-539b31994b85.png)
+
