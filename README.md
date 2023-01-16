@@ -20,9 +20,14 @@ The application is built using modern technologies such as Spring Boot.
 It also includes a swagger documentation for the endpoints.
 It follows the best practices for security in terms of input validation and access control.
 
+<br>
 #E-R Diagram
+<br>
 ![E-R Diagram](https://user-images.githubusercontent.com/107461052/212683690-1910c6e2-cb10-409e-b1ee-d94c6c18f246.png)
 
+<br>
+<br>
 #WorkFlow
+<br>
 ![WorkFlow](https://user-images.githubusercontent.com/107461052/212683750-11c64541-9c01-4137-9e1f-539b31994b85.png)
 
