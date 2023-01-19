@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.Exception.OrderException;
+import com.masai.Model.Cart;
+import com.masai.Model.Customer;
 import com.masai.Model.Order;
 import com.masai.Repository.OrderDao;
 
@@ -15,11 +17,11 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	private OrderDao orderDao;
 	
+	
 	@Override
-	public Order addOrder(Order order) throws OrderException {
+	public Order addOrder(Cart cart) throws OrderException {
 		
 		
-		// TODO Auto-generated method stub
 		return null;
 	}
 
