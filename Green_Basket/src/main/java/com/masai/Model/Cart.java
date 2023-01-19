@@ -27,8 +27,8 @@ public class Cart {
 	private Integer cartId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customerId")
-	private Integer customerId;
+	@JoinColumn(name = "customerId",referencedColumnName = "customerId")
+	private Customer customer;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<VegetableDto> vegetable = new ArrayList<>();
