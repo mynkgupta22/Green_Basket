@@ -1,6 +1,5 @@
 package com.masai.Exception;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class MyErrorDetails {
