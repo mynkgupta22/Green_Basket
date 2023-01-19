@@ -69,7 +69,8 @@ public class Order {
 		this.customer = customer;
 	}
 
-	public Order(Integer orderNo, Double totalAmount, String status, List<Vegetable> vegetableList, Customer customer) {
+	public Order(Integer orderNo, Double totalAmount, String status, List<Vegetable> vegetableList,
+			Integer customerId) {
 		super();
 		this.orderNo = orderNo;
 		this.totalAmount = totalAmount;
@@ -82,20 +83,13 @@ public class Order {
 		super();
 	}
 
-	public Order(Double totalAmount, String status, List<Vegetable> vegetableList, Customer customer) {
-		super();
-		this.totalAmount = totalAmount;
-		this.status = status;
-		this.vegetableList = vegetableList;
-		this.customer = customer;
-	}
-
 	@Override
 	public String toString() {
 		return "Order [orderNo=" + orderNo + ", totalAmount=" + totalAmount + ", status=" + status + ", vegetableList="
-				+ vegetableList + ", customer=" + customer + "]";
+				+ vegetableList + ", customerId=" + customer + "]";
 	}
 
+	
 	
 	
 }
