@@ -14,13 +14,13 @@ public class Vegetable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer vid;
+	private Integer VegId;
 	@NotNull
 	@Size(min=3,max =10	,message = "length should be 3 to 10")
-	private String veg_name;
+	private String Name;
 	@NotNull
 	@Size(min=3,max =10	,message = "length should be 3 to 10")
-	private String veg_type;
+	private String Type;
 	@NotNull
 	@Size(min=4,max =10	,message = "length should be 4 to 10")
 	private String seasonality;
@@ -38,11 +38,11 @@ public class Vegetable {
 	private String descrption;
 	@NotNull
 //	@Size(min=1,max=500, message = "unit should be greater than 0 ")
-	private int unit;
+	private int Quantity;
 	@NotNull
 //	@DecimalMin("1")
 //	@DecimalMax("10000")
-	private Double price;
+	private Double Price;
 	
 	
 	
@@ -69,16 +69,16 @@ public class Vegetable {
 			@NotNull @Size(min = 3, max = 50, message = "descrption length should be 3 to 50") String descrption,
 			@NotNull int unit, @NotNull Double price) {
 		super();
-		this.vid = vid;
-		this.veg_name = veg_name;
-		this.veg_type = veg_type;
+		this.VegId = vid;
+		this.Name = veg_name;
+		this.Type = veg_type;
 		this.seasonality = seasonality;
 		this.nutrition_Details = nutrition_Details;
 		this.storage = storage;
 		this.shelf_life = shelf_life;
 		this.descrption = descrption;
-		this.unit = unit;
-		this.price = price;
+		this.Quantity = unit;
+		this.Price = price;
 	}
 
 
@@ -105,22 +105,22 @@ public class Vegetable {
 
 
 	public Integer getVid() {
-		return vid;
+		return VegId;
 	}
 	public void setVid(Integer vid) {
-		this.vid = vid;
+		this.VegId = vid;
 	}
 	public String getVeg_name() {
-		return veg_name;
+		return Name;
 	}
 	public void setVeg_name(String veg_name) {
-		this.veg_name = veg_name;
+		this.Name = veg_name;
 	}
 	public String getVeg_type() {
-		return veg_type;
+		return Type;
 	}
 	public void setVeg_type(String veg_type) {
-		this.veg_type = veg_type;
+		this.Type = veg_type;
 	}
 	public String getSeasonality() {
 		return seasonality;
@@ -153,25 +153,25 @@ public class Vegetable {
 		this.descrption = descrption;
 	}
 	public int getUnit() {
-		return unit;
+		return Quantity;
 	}
 	public void setUnit(int unit) {
-		this.unit = unit;
+		this.Quantity = unit;
 	}
 	public Double getPrice() {
-		return price;
+		return Price;
 	}
 	public void setPrice(Double price) {
-		this.price = price;
+		this.Price = price;
 	}
 	
 	
 	
 	@Override
 	public String toString() {
-		return "Vegetable [vid=" + vid + ", veg_name=" + veg_name + ", veg_type=" + veg_type + ", seasonality="
+		return "Vegetable [vid=" + VegId + ", veg_name=" + Name + ", veg_type=" + Type + ", seasonality="
 				+ seasonality + ", nutrition_Details=" + nutrition_Details + ", storage=" + storage + ", shelf_life="
-				+ shelf_life + ", descrption=" + descrption + ", unit=" + unit + ", price=" + price + "]";
+				+ shelf_life + ", descrption=" + descrption + ", unit=" + Quantity + ", price=" + Price + "]";
 	}
 	
 	
