@@ -9,6 +9,8 @@ import com.masai.Exception.OrderException;
 import com.masai.Model.Cart;
 import com.masai.Model.Customer;
 import com.masai.Model.Order;
+import com.masai.Model.VegetableDTO;
+import com.masai.Model.VegetableDto;
 import com.masai.Repository.OrderDao;
 
 @Service
@@ -21,6 +23,13 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public Order addOrder(Cart cart) throws OrderException {
 		
+		Double totalPrice=0.0;
+		for(VegetableDTO  c : cart.getVegetable()) {
+			totalPrice += c.getPrice();
+		}
+		Order order= new Order();
+		order.setTotalAmount(totalPrice);
+		order.setVegetableList(null);
 		
 		return null;
 	}

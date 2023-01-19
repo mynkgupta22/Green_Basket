@@ -31,5 +31,8 @@ public class Cart {
 	private Integer customerId;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<VegetableDto> vegetable = new ArrayList<>();
+	private List<VegetableDTO> vegetable = new ArrayList<>();
+	
+	
+	
 }
