@@ -56,4 +56,13 @@ public class GlobalException {
 		me.setMessage(ce.getMessage());
 		return new ResponseEntity<>(me,HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(FeedbackException.class)
+	public ResponseEntity<MyErrorDetails> cartException(FeedbackException fe,WebRequest req){
+		MyErrorDetails me=new MyErrorDetails();
+		me.setTimeStamp(LocalDateTime.now());
+		me.setDetails(req.getDescription(false));
+		me.setMessage(fe.getMessage());
+		return new ResponseEntity<>(me,HttpStatus.BAD_REQUEST);
+	}
 }

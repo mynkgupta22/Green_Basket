@@ -41,7 +41,7 @@ public class VegetableServiceImpl implements VegetableService {
 		Vegetable update=vegetable.get();
 		if(vegetable.isPresent()) {
 			update.setPrice(veg.getPrice());
-			update.setUnit(veg.getUnit());
+			update.setQuantity(veg.getQuantity());;
 			System.out.println("Price And Unit Update");
 			
 		}else{
