@@ -27,7 +27,7 @@ public class Order {
 	
 	@ManyToOne
 	@JoinColumn(name="customerId")
-	private Customer customer;
+	private Integer customerId;
 
 	public Integer getOrderNo() {
 		return orderNo;
@@ -61,41 +61,35 @@ public class Order {
 		this.vegetableList = vegetableList;
 	}
 
-	public Customer getCustomer() {
-		return customer;
+	public Integer getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 
-	public Order(Integer orderNo, Double totalAmount, String status, List<Vegetable> vegetableList, Customer customer) {
+	public Order(Integer orderNo, Double totalAmount, String status, List<Vegetable> vegetableList,
+			Integer customerId) {
 		super();
 		this.orderNo = orderNo;
 		this.totalAmount = totalAmount;
 		this.status = status;
 		this.vegetableList = vegetableList;
-		this.customer = customer;
+		this.customerId = customerId;
 	}
 
 	public Order() {
 		super();
 	}
 
-	public Order(Double totalAmount, String status, List<Vegetable> vegetableList, Customer customer) {
-		super();
-		this.totalAmount = totalAmount;
-		this.status = status;
-		this.vegetableList = vegetableList;
-		this.customer = customer;
-	}
-
 	@Override
 	public String toString() {
 		return "Order [orderNo=" + orderNo + ", totalAmount=" + totalAmount + ", status=" + status + ", vegetableList="
-				+ vegetableList + ", customer=" + customer + "]";
+				+ vegetableList + ", customerId=" + customerId + "]";
 	}
 
+	
 	
 	
 }
