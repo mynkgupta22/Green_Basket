@@ -16,6 +16,8 @@ public interface OrderService {
 	
 	public List<Order> viewAllOrders(Integer customerId)throws OrderException;
 	
+	public List<Order> viewCompleteOrdersList()throws OrderException;
+	
 	public Order deleteOrder(Integer orderNo)throws OrderException;
 	
 

@@ -1,3 +1,4 @@
+
 package com.masai.Model;
 
 import javax.persistence.Entity;
