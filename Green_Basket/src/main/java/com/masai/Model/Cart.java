@@ -9,8 +9,6 @@ import lombok.*;
 
 @Entity
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cart {
@@ -19,6 +17,7 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer cartId;
 	
+
 //	@OneToOne(cascade = CascadeType.ALL)
 //	@JoinColumn(name = "customerId")
 	private Integer customerId;
@@ -26,8 +25,9 @@ public class Cart {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Order order;
 
-	@Embedded
-	private List<VegetableDTO> vegetable=new ArrayList<>();
+	@ElementCollection
+  @CollectionTable(name = "vegetableDto", joinColumns = @JoinColumn(name = "cartId"),foreignKey = @ForeignKey(name="vege_cart_fk"))
+	private List<VegetableDTO> vegetable = new ArrayList<>();
 
 
 }

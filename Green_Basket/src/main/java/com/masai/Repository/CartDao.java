@@ -8,4 +8,5 @@ import com.masai.Model.Cart;
 @Repository
 public interface CartDao extends JpaRepository<Cart, Integer>{
 
+	
 }
