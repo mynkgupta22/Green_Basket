@@ -65,11 +65,11 @@ public class CartServiceImpl implements CartService{
 				throw new VegetableException("Not found vegetable");
 			}
 			Vegetable vegsto = stock.get();
-			if(vegsto.getName() == veg.getName() && vegsto.getStorage() > veg.getQuantity()) {
-				vegsto.setStorage(vegsto.getStorage()-veg.getQuantity());
+			if(vegsto.getName() == veg.getName() && vegsto.getQuantity() > veg.getQuantity()) {
+				vegsto.setQuantity(vegsto.getQuantity()-veg.getQuantity());
 				vegetable.save(vegsto);
 			}else {
-				throw new VegetableException("Stock is "+vegsto.getStorage()+" less than given"+veg.getQuantity());
+				throw new VegetableException("Stock is "+vegsto.getQuantity()+" less than given"+veg.getQuantity());
 			}			
 			
 			
@@ -87,8 +87,8 @@ public class CartServiceImpl implements CartService{
 		Optional<Cart> cart = cartDao.findById(cartId);
 		if(cart.isPresent()) {
 			Optional<Vegetable> veg = vegetable.findById(vegId);
-			if(veg.get().getStorage() > quantity) {
-				veg.get().setStorage(veg.get().getStorage()-quantity);
+			if(veg.get().getQuantity() > quantity) {
+				veg.get().setQuantity(veg.get().getQuantity()-quantity);
 				vegetable.save(veg.get());
 			}else {
 				throw new VegetableException("quantity not available");
