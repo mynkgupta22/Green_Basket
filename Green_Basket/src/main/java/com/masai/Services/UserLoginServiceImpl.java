@@ -7,6 +7,7 @@ import org.apache.tomcat.util.http.fileupload.ThresholdingOutputStream;
 import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.Exception.UserException;
@@ -21,7 +22,7 @@ import com.masai.Repository.UserSessionDao;
 import net.bytebuddy.utility.RandomString;
 
 
-@Repository
+@Service
 public class UserLoginServiceImpl implements UserLoginService{
 	
 	@Autowired

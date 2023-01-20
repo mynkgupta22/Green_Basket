@@ -30,7 +30,7 @@ public class VegetableController {
 	
 	
 	@PostMapping("/vegetable")
-	public ResponseEntity<Vegetable> registerVegetable(@Valid @RequestBody Vegetable vegetable) throws VegetableException{
+	public ResponseEntity<Vegetable> registerVegetable(@RequestBody Vegetable vegetable) throws VegetableException{
 		
 		Vegetable veg=vs.addVegetable(vegetable);
 		return new ResponseEntity<>(veg,HttpStatus.CREATED);
@@ -38,7 +38,7 @@ public class VegetableController {
 	}
 	
 	@GetMapping("/vegetables")
-	public ResponseEntity<List<Vegetable>> allemp() throws VegetableException{
+	public ResponseEntity<List<Vegetable>> allVegetableList() throws VegetableException{
 		
 		List<Vegetable> list =vs.listOfVegetables();
 		return new ResponseEntity<List<Vegetable>>(list,HttpStatus.OK);
@@ -47,18 +47,18 @@ public class VegetableController {
 	
 	
 	@DeleteMapping("/vegetable/{vid}")
-	public ResponseEntity<Vegetable> delet(@PathVariable("vid") Integer vId) throws VegetableException{
+	public ResponseEntity<Vegetable> deleteVeg(@PathVariable("vid") Integer vId) throws VegetableException{
 		
-		Vegetable empl =vs.deleteVegetable(vId);
-		return new ResponseEntity<Vegetable>(empl,HttpStatus.OK);
+		Vegetable veg =vs.deleteVegetable(vId);
+		return new ResponseEntity<Vegetable>(veg,HttpStatus.OK);
 		
 	}
 	
 	@PutMapping("/vegetable/{vid}")
-	public ResponseEntity<Vegetable> update(@Valid @PathVariable("vid") Integer vId,@RequestBody Vegetable customer) throws VegetableException{
+	public ResponseEntity<Vegetable> update(@PathVariable("vid") Integer vId,@RequestBody Vegetable vegetable) throws VegetableException{
 		
-		Vegetable updates =vs.updateVegetable(vId, customer);
-		return new ResponseEntity<Vegetable>(updates,HttpStatus.ACCEPTED);
+		Vegetable updated =vs.updateVegetable(vId, vegetable);
+		return new ResponseEntity<Vegetable>(updated,HttpStatus.ACCEPTED);
 		
 	}
 	
