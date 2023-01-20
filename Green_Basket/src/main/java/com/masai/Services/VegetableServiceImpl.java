@@ -25,7 +25,7 @@ public class VegetableServiceImpl implements VegetableService {
 		// TODO Auto-generated method stub
 		if(veg!=null) {
 			Vegetable vegetable=vr.save(veg);
-			System.out.println("Vegetable Added");
+			//System.out.println("Vegetable Added");
 			return veg;
 		}
 		else {
@@ -41,14 +41,15 @@ public class VegetableServiceImpl implements VegetableService {
 		Vegetable update=vegetable.get();
 		if(vegetable.isPresent()) {
 			update.setPrice(veg.getPrice());
-			update.setQuantity(veg.getQuantity());;
-			System.out.println("Price And Unit Update");
-			
+			update.setQuantity(veg.getQuantity());
+			vr.save(update);
+			//System.out.println("Price And Unit Update");
+			return update;
 		}else{
 			throw new VegetableException("Not Valid Type");
 		}
 		
-		return update;
+
 	}
 
 	@Override
@@ -58,7 +59,7 @@ public class VegetableServiceImpl implements VegetableService {
 		if(vegetable.isPresent()) {
 			Vegetable veg=vegetable.get();
 			vr.delete(veg);
-			System.out.println("Vegetable is Deleted!");
+			//System.out.println("Vegetable is Deleted!");
 			return veg;
 		}
 		else
@@ -84,7 +85,7 @@ public class VegetableServiceImpl implements VegetableService {
 	public List<Vegetable> getVegetableByName(String veg_name) throws VegetableException {
 		// TODO Auto-generated method stub
 		
-		List<Vegetable> list=vr.findByVeg_name(veg_name);
+		List<Vegetable> list=vr.findByName(veg_name);
 		if(list!=null) {
 			return list;
 		}
