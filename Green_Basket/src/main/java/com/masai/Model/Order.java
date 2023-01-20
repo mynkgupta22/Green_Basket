@@ -12,8 +12,6 @@ import java.util.List;
 @Entity
 @Table(name="Orders")
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
