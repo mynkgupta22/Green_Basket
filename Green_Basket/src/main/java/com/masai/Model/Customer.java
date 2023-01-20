@@ -14,9 +14,13 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer customerId;
+	
 	private String customerName;
+	
 	private String mobileNumber;
+	
 	private String emailId;
+	
 	private String password;
 	
 	@Embedded
@@ -91,7 +95,4 @@ public class Customer {
 	}
 	
 	
-	
-	
-
 }
