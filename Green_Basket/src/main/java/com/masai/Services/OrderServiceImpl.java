@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.masai.Exception.CartException;
 import com.masai.Repository.CartDao;
+import com.masai.Repository.CustomerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,9 @@ public class OrderServiceImpl implements OrderService{
 	private OrderDao orderDao;
 	@Autowired
 	private CartDao cartDao;
+
+	@Autowired
+	private CustomerDao customerDao;
 	
 	@Override
 	public Order addOrder(Order order,Integer cartId) throws OrderException {
@@ -36,19 +40,22 @@ public class OrderServiceImpl implements OrderService{
 		}
 
 		Cart cart = opt.get();
-         order.setCart(cart);
+		order.setCart(cart);
 		Double totalPrice=0.0;
 		for(VegetableDTO  c : cart.getVegetable()) {
 			totalPrice += c.getPrice()*c.getQuantity();
 		}
 		//Order order= new Order();
 		order.setTotalAmount(totalPrice);
-		order.setVegetableList(cart.getVegetable());
+		//order.setVegetableList(cart.getVegetable());
+		for(VegetableDTO v : cart.getVegetable()){
+			order.getVegetableList().add(v);
+		}
 		order.setStatus("Successful");
 		order.setCustomerId(cart.getCustomerId());
-		
+
 		orderDao.save(order);
-		
+
 		return order;
 	}
 

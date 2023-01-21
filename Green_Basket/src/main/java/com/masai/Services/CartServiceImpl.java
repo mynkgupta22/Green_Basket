@@ -24,8 +24,7 @@ public class CartServiceImpl implements CartService{
 	@Autowired
 	private VegetableDao vegetable;
 	
-	@Autowired
-	private OrderDao orderDao;
+
 	
 	@Override
 	public Cart createCart(Cart cart) throws CartException {
@@ -127,24 +126,23 @@ public class CartServiceImpl implements CartService{
 
 
 	@Override
-	public Cart removeVegetable(Integer cartId, Integer quantity, Integer vegId) throws VegetableException {
-		Optional<Cart> cart = cartDao.findById(cartId);
-		if(cart.isPresent()) {
-			for(int i=0;i< cart.get().getVegetable().size();i++) {
-				
-			}
-			List<VegetableDTO> lists = cart.get().getVegetable();
+	public Cart removeVegetable(Integer cartId, Integer vegId) throws VegetableException {
+		Optional<Cart> opt = cartDao.findById(cartId);
+		if(opt.isPresent()) {
+			Cart cart=opt.get();
+			List<VegetableDTO> lists = cart.getVegetable();
 			VegetableDTO dto = null;
 			for (VegetableDTO list : lists) {
 				if(list.getVegId() == vegId) {
 					 dto = list;
+					 lists.remove(dto);
 					break;
 				}
 				
 			}
-			lists.remove(dto);
-			cart.get().setVegetable(lists);
-			Cart newcart = cartDao.save(cart.get());
+
+			cart.setVegetable(lists);
+			Cart newcart = cartDao.save(cart);
 			return newcart;
 		}else {
 			throw new VegetableException("cartId not found to remove");
