@@ -2,7 +2,6 @@ package com.masai.Controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,8 +29,8 @@ public class VegetableController {
 	
 	
 	@PostMapping("/vegetable")
-	public ResponseEntity<Vegetable> registerVegetable(@RequestBody Vegetable vegetable) throws VegetableException{
-		
+	public ResponseEntity<Vegetable> registerVegetable(@RequestBody Vegetable vegetable){
+		System.out.println(vegetable);
 		Vegetable veg=vs.addVegetable(vegetable);
 		return new ResponseEntity<>(veg,HttpStatus.CREATED);
 		

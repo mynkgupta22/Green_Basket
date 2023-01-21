@@ -8,7 +8,7 @@ import com.masai.Model.Order;
 
 public interface OrderService {
 	
-	public Order addOrder(Cart cart)throws OrderException;
+	public Order addOrder(Order order,Integer cartId)throws OrderException;
 	
 	public Order viewOrder(Integer orderNo)throws OrderException;
 	

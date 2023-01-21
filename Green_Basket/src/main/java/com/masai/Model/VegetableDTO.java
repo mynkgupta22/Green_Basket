@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.ManyToOne;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,10 +19,6 @@ public class VegetableDTO {
 
 	private Double price;
 	private Integer quantity;
-
-//	@ManyToOne
-//	private Cart cart;
-
 
 
 		

@@ -65,7 +65,7 @@ public class CartServiceImpl implements CartService{
 				throw new VegetableException("Not found vegetable");
 			}
 			Vegetable vegsto = stock.get();
-			if(vegsto.getName() == veg.getName() && vegsto.getQuantity() > veg.getQuantity()) {
+			if(vegsto.getQuantity() > veg.getQuantity()) {
 				vegsto.setQuantity(vegsto.getQuantity()-veg.getQuantity());
 				vegetable.save(vegsto);
 			}else {

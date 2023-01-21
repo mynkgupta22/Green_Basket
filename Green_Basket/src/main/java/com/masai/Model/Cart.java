@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import lombok.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @Entity
 @Data
@@ -23,6 +24,7 @@ public class Cart {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Order order;
 
+	@Embedded
 	@ElementCollection
 	private List<VegetableDTO> vegetable = new ArrayList<>();
 

@@ -1,7 +1,9 @@
 package com.masai.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Transactional
 public class Order {
 	
 	@Id
@@ -24,7 +27,8 @@ public class Order {
 	
 	private String status;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER,mappedBy = "order")
+	@JsonIgnore
 	private Cart cart;
 	
     @Embedded
