@@ -28,19 +28,13 @@ public class Vegetable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer vegId;
 
-	//@NotNull
-	//@Size(min=3,max =10	,message = "length should be 3 to 10")
 	private String name;
 
-	//@NotNull
-	//@Size(min=3,max =10	,message = "length should be 3 to 10")
 	private String type;
 
-	//@NotNull
-	//@Size(min=3,max =10	,message = "Storage should be 3 to 10")
+
 	private Integer quantity;
 
-	//@NotNull
 	private Double price;
 
 
