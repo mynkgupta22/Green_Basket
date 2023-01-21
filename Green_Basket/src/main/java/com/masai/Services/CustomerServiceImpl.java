@@ -77,6 +77,8 @@ public class CustomerServiceImpl implements CustomerService{
 //		updatedCustomer.setEmailId(customer.getEmailId());
 //		updatedCustomer.setMobileNumber(customer.getMobileNumber());
 //		updatedCustomer.setPassword(customer.getPassword());
+//      can be added , if else condition
+
 		
 		customerDao.save(customer);
 		
