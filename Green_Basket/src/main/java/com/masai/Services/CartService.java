@@ -16,7 +16,7 @@ public interface CartService {
 	public VegetableDTO addVegToCart(VegetableDTO veg, Integer cartId)throws VegetableException;
 	public Cart increaseVegQantity(Integer cartId, Integer quantity,Integer vegId) throws VegetableException;
 	public Cart decreaseVegQantity(Integer cartId, Integer quantity,Integer vegId) throws VegetableException;
-	public Cart removeVegetable(Integer cartId, Integer quantity,Integer vegId) throws VegetableException;
+	public Cart removeVegetable(Integer cartId,Integer vegId) throws VegetableException;
 	public Cart removeAllVegetable(Integer cartId) throws VegetableException;
 
 	public List<VegetableDTO> viewAllItems(Integer cartId) throws VegetableException;

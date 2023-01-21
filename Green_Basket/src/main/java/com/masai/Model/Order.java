@@ -16,7 +16,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Transactional
 public class Order {
 	
 	@Id
@@ -32,11 +31,10 @@ public class Order {
 	private Cart cart;
 	
     @Embedded
+	@ElementCollection
 	private List<VegetableDTO> vegetableList=new ArrayList<>();
 	
 
-	
 	private Integer customerId;
-
 
 }

@@ -3,7 +3,7 @@ package com.masai.Services;
 import java.util.List;
 
 import com.masai.Exception.OrderException;
-import com.masai.Model.Cart;
+
 import com.masai.Model.Order;
 
 public interface OrderService {
