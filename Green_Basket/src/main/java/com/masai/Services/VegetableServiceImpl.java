@@ -22,11 +22,11 @@ public class VegetableServiceImpl implements VegetableService {
 
 	@Override
 	public Vegetable addVegetable(Vegetable veg) throws VegetableException {
-		// TODO Auto-generated method stub
+
 		if(veg!=null) {
 			Vegetable vegetable=vr.save(veg);
-			//System.out.println("Vegetable Added");
-			return veg;
+			System.out.println(vegetable);
+			return vegetable;
 		}
 		else {
 			throw new VegetableException("Input might be incorrect");

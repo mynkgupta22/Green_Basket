@@ -3,6 +3,8 @@ package com.masai.Services;
 import java.util.List;
 import java.util.Optional;
 
+import com.masai.Exception.CartException;
+import com.masai.Repository.CartDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,16 +23,25 @@ public class OrderServiceImpl implements OrderService{
 
 	@Autowired
 	private OrderDao orderDao;
-	
+	@Autowired
+	private CartDao cartDao;
 	
 	@Override
-	public Order addOrder(Cart cart) throws OrderException {
-		
+	public Order addOrder(Order order,Integer cartId) throws OrderException {
+
+		Optional<Cart> opt = cartDao.findById(cartId);
+
+		if(opt.isEmpty()){
+			throw new CartException("No Cart Available with Id");
+		}
+
+		Cart cart = opt.get();
+         order.setCart(cart);
 		Double totalPrice=0.0;
 		for(VegetableDTO  c : cart.getVegetable()) {
-			totalPrice += c.getPrice();
+			totalPrice += c.getPrice()*c.getQuantity();
 		}
-		Order order= new Order();
+		//Order order= new Order();
 		order.setTotalAmount(totalPrice);
 		order.setVegetableList(cart.getVegetable());
 		order.setStatus("Successful");
@@ -55,8 +66,9 @@ public class OrderServiceImpl implements OrderService{
 	public Order updateOrderDetails(Order order) throws OrderException {
 		Optional<Order> existingOrder=orderDao.findById(order.getOrderNo());
 		if(existingOrder.isPresent()) {
-			orderDao.save(order);
-			return order;
+			Order updatedOrder=existingOrder.get();
+			updatedOrder=orderDao.save(order);
+			return updatedOrder;
 		}
 		throw new OrderException("Order not found");
 	}

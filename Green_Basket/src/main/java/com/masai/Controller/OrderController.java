@@ -26,12 +26,12 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/order")
-	public ResponseEntity<Order> addOrder(@RequestBody Cart cart) throws OrderException {
+	@PostMapping("/order/{cartId}")
+	public ResponseEntity<Order> addOrder(@RequestBody Order order,@PathVariable Integer cartId) throws OrderException {
 		
-		Order order = orderService.addOrder(cart);
+		Order saveOrder = orderService.addOrder(order,cartId);
 		
-		return new ResponseEntity<>(order,HttpStatus.CREATED);
+		return new ResponseEntity<Order>(saveOrder,HttpStatus.CREATED);
 	}
 
 	@GetMapping("/order/{orderNo}")
