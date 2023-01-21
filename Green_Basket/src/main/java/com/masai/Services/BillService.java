@@ -3,14 +3,12 @@ package com.masai.Services;
 import java.util.List;
 
 import com.masai.Exception.BillException;
-import com.masai.Model.BillDetails;
+import com.masai.Model.BillServiceModel;
 
 public interface BillService {
 
-	public BillDetails addBill(BillDetails addBill)throws BillException;
+	public BillServiceModel BillsAdded(BillServiceModel addBills) throws BillException;
 
-	public BillDetails updateBill(BillDetails updBill)throws BillException;
-
-	public List<BillDetails> viewBill()throws BillException ;
+	public List<BillServiceModel> getAllBill() throws BillException;
 
 }

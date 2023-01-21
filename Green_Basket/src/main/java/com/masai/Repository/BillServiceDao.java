@@ -1,10 +1,11 @@
 package com.masai.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.masai.Model.BillDetails;
+import com.masai.Model.BillServiceModel;
 
-public interface BillServiceDao extends JpaRepository<BillDetails, Integer>{
-
+@Repository
+public interface BillserviceDao extends JpaRepository<BillServiceModel,Integer>{
 
 }

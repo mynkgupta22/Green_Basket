@@ -1,42 +1,34 @@
 package com.masai.Services;
 
-
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.masai.Exception.BillException;
-import com.masai.Model.BillDetails;
-import com.masai.Repository.BillServiceDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class BillServiceImpl implements BillService{
-	
+import com.masai.Repository.BillserviceDao;
+import com.masai.Model.BillServiceModel;
+
+@Service
+public class BillServiceImpl implements BillService {
+
 	@Autowired
-	private BillServiceDao serv;
+	private BillserviceDao repo;
 
 	@Override
-	public BillDetails addBill(BillDetails addBill) throws BillException {
-		if(addBill==null)
+	public BillServiceModel BillsAdded(BillServiceModel addBills) throws BillException {
+
+		if (addBills == null) {
 			throw new BillException("Bill Can't be Null");
-		
-		return serv.save(addBill);
+		}
+		BillServiceModel f1 = repo.save(addBills);
+		return f1;
 	}
 
 	@Override
-	public BillDetails updateBill(BillDetails updBill) throws BillException {
-       Optional<BillDetails> upt = serv.findById(updBill.getBillingId());
-		
-		if(upt.isPresent()) {
-			return serv.save(upt.get());
-		}else
-			throw new BillException("Bill Not Exist to Update ");
+	public List<BillServiceModel> getAllBill() throws BillException {
+
+		return repo.findAll();
 	}
 
-	@Override
-	public List<BillDetails> viewBill() throws BillException {
-		return serv.findAll();
-	}
-
-	
 }
