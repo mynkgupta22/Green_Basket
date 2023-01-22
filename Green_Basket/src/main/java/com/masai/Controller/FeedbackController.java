@@ -5,16 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.masai.Exception.FeedbackException;
 import com.masai.Model.Feedback;
 import com.masai.Services.FeedbackService;
-
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 @RestController
 public class FeedbackController {
 	

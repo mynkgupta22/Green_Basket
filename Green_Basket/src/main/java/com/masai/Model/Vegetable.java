@@ -32,6 +32,8 @@ public class Vegetable {
 	//@Size(min=3,max =10	,message = "length should be 3 to 10")
 	private String name;
 
+	private String imageUrl;
+
 	//@NotNull
 	//@Size(min=3,max =10	,message = "length should be 3 to 10")
 	private String type;

@@ -3,13 +3,7 @@ package com.masai.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.masai.Exception.AdminException;
 import com.masai.Exception.UserException;
@@ -18,7 +12,7 @@ import com.masai.Services.AdminService;
 import com.masai.Services.UserLoginService;
 
 
-
+@CrossOrigin
 @RestController
 public class AdminController {
 	
@@ -28,7 +22,8 @@ public class AdminController {
 	@Autowired
 	private UserLoginService userLoginService;
 	
-	
+
+
 	@PostMapping("/admin")
 	public ResponseEntity<Admin> registerNewAdminHandler(@RequestBody Admin admin) throws AdminException{
 		
@@ -36,7 +31,7 @@ public class AdminController {
 		
 		return new ResponseEntity<Admin>(savedAdmin,HttpStatus.CREATED);
 	}
-	
+
 	@GetMapping("/admin/{id}/{key}")
 	public ResponseEntity<Admin> viewAdminHandler(@PathVariable("id") Integer admin_id,@PathVariable("key") String key) throws AdminException, UserException{
 		
