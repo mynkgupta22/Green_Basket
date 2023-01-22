@@ -14,6 +14,7 @@ import com.masai.Services.UserLoginService;
 
 @CrossOrigin
 @RestController
+@CrossOrigin
 public class UserController {
 	
 	@Autowired

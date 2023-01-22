@@ -71,10 +71,9 @@ public class CartServiceImpl implements CartService{
 				throw new VegetableException("Stock is "+vegsto.getQuantity()+" less than given"+veg.getQuantity());
 			}			
 			
-			
+			veg.setPrice(vegsto.getPrice());
 			myCart.getVegetable().add(veg);
 			Cart addcart = cartDao.save(myCart);
-//			System.out.println(addcart.getCustomer().getCustomerName());
 			
 		}
 		return veg;
