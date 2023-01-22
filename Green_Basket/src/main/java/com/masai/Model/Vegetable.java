@@ -30,16 +30,14 @@ public class Vegetable {
 
 	private String name;
 
-
-	private String imageUrl;
-
-	
 	private String type;
 
 
 	private Integer quantity;
 
 	private Double price;
+
+	private String imageUrl;
 
 
 }

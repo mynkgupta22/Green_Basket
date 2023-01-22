@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.masai.Model.Cart;
 import com.masai.Model.VegetableDTO;
 import com.masai.Services.CartService;
-@CrossOrigin
+
 @RestController
 public class CartController {
 

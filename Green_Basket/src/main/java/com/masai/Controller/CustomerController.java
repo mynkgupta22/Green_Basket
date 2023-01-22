@@ -14,7 +14,7 @@ import com.masai.Services.CustomerService;
 import com.masai.Services.UserLoginService;
 
 
-@CrossOrigin
+
 @RestController
 @CrossOrigin
 public class CustomerController {

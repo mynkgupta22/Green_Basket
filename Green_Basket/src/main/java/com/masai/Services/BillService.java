@@ -1,19 +1,15 @@
 package com.masai.Services;
 
-import java.util.List;
-
 import com.masai.Exception.BillException;
-import com.masai.Model.BillServiceModel;
+import com.masai.Exception.OrderException;
+import com.masai.Model.BillDetails;
+
+import java.util.List;
 
 public interface BillService {
 
-	public BillServiceModel BillsAdded(BillServiceModel addBills) throws BillException;
+    public BillDetails BillsAdded(BillDetails addBills) throws BillException;
 
-	public List<BillServiceModel> getAllBill() throws BillException;
+    public List<BillDetails> getAllBill() throws BillException;
 
-
-
-	
-	
-	
 }

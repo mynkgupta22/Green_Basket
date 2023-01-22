@@ -1,80 +1,33 @@
 package com.masai.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class BillDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int BillingId;
-    private int orderId;
-    private String TransactionMode;
-    private Date TransactionDate ;
-    private String TransactionStatus;
-    @Embedded
-    private Address address;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer billId;
+    private Integer orderId;
+    private String transactionMode;
+    //  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private String transactionDate ;
+    private String transactionStatus;
+
+//    @Embedded
+//    private Address address;
 
 
-    public BillDetails() {
-    }
 
-    public BillDetails(int billingId, int orderId, String transactionMode, Date transactionDate, String transactionStatus, Address address) {
-        BillingId = billingId;
-        this.orderId = orderId;
-        TransactionMode = transactionMode;
-        TransactionDate = transactionDate;
-        TransactionStatus = transactionStatus;
-        this.address = address;
-    }
 
-    public int getBillingId() {
-        return BillingId;
-    }
-
-    public void setBillingId(int billingId) {
-        BillingId = billingId;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getTransactionMode() {
-        return TransactionMode;
-    }
-
-    public void setTransactionMode(String transactionMode) {
-        TransactionMode = transactionMode;
-    }
-
-    public Date getTransactionDate() {
-        return TransactionDate;
-    }
-
-    public void setTransactionDate(Date transactionDate) {
-        TransactionDate = transactionDate;
-    }
-
-    public String getTransactionStatus() {
-        return TransactionStatus;
-    }
-
-    public void setTransactionStatus(String transactionStatus) {
-        TransactionStatus = transactionStatus;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }
