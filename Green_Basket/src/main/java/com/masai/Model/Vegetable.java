@@ -30,6 +30,10 @@ public class Vegetable {
 
 	private String name;
 
+
+	private String imageUrl;
+
+	
 	private String type;
 
 
