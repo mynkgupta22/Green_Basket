@@ -1,4 +1,22 @@
 #Green Basket
+
+#E-R Diagram
+
+
+![E-R Diagram](https://user-images.githubusercontent.com/107461052/212683690-1910c6e2-cb10-409e-b1ee-d94c6c18f246.png)
+
+<br>
+<br>
+#WorkFlow
+<br>
+
+![WorkFlow](https://user-images.githubusercontent.com/107461052/212683750-11c64541-9c01-4137-9e1f-539b31994b85.png)
+
+
+
+
+# GreenBasket (Online Vegetable Sales Application)
+# FrontEnd And BackEnd(REST API)for an Online Vegetable Sales Application
 <br>
 <br>
 <img src="https://user-images.githubusercontent.com/107461052/212683987-3cf29572-7af3-4b84-bc8d-57c594f8a75e.png"  width="300" height="200" position="center">
@@ -21,15 +39,88 @@ It also includes a swagger documentation for the endpoints.
 It follows the best practices for security in terms of input validation and access control.
 
 <br>
-#E-R Diagram
 
+* This project is developed by team of 5 Aspiring Developers . 
 
-![E-R Diagram](https://user-images.githubusercontent.com/107461052/212683690-1910c6e2-cb10-409e-b1ee-d94c6c18f246.png)
+## Tech Stack
 
+* Java
+* Spring Framework
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* MySQL
+* HTML
+* CSS
+* JavaScript
+
+------------------------------------------------------------------------------
+## Modules
+------------------------------------------------------------------------------
+* Login, Logout Module
+* Customer Module
+* Admin Module
+* AddToCart Module
+* Order Module
+* Vegetable Stock Module
+
+---------------------------------------------------------------------------------
+## Features
+
+---------------------------------------------------------------------------------
+* Customer and Admin authentication & validation with usersession's sessionid.
+* Admin Features:
+    * Administrator Role of the entire application
+    * Only registered admins with valid sessionid can add/update/delete Vegetable in the database.
+    * Admin can access the details of orders, bill details, customer list.
+* Customer Features:
+    * Registering themselves with application, and logging in to get the valid sessionid.
+    * Customer can add vegetables into the cart
+    * Only logged in user can access their all order history.
+
+--------------------------------------------------------------------------------
+## Contributors
+--------------------------------------------------------------------------------
+*<a href="https://github.com/mynkgupta22">Mayank Gupta</a>
 <br>
+*<a href="https://github.com/kieransahoo">Kieran Sahoo</a>
 <br>
-#WorkFlow
+*<a href="https://github.com/mynkgupta22">Nitesh Pal</a>
 <br>
+*<a href="https://github.com/mynkgupta22">Sadanand Mare</a>
+<br>
+*<a href="https://github.com/mynkgupta22">Santosh Kumar</a>
 
-![WorkFlow](https://user-images.githubusercontent.com/107461052/212683750-11c64541-9c01-4137-9e1f-539b31994b85.png)
+
+## Installation & Run
+
+* Before running the API server, you should update the database config inside the [application.properties](GrennBasket\src\main\resources\application.properties) file. 
+* Update the port number, username and password as per your local database config.
+
+```
+    server.port=8088
+    spring.datasource.url=jdbc:mysql://localhost:3306/greenBasket;
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    spring.datasource.username=root
+    spring.datasource.password=root
+```
+
+## API Root Endpoint
+
+`https://localhost:8082/`
+
+`http://localhost:8082/swagger-ui.html`
+
+
+## API Module Endpoints
+
+### Customer Module
+
+
+* `POST /customer` : Register customer by providing valid details
+
+
+
+
+
 
